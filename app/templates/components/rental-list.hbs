@@ -1,0 +1,9 @@
+<h1>{{this.title}}</h1>
+<ul>
+    {{#each this.rental as |rental|}}
+        <li>{{rental}}</li>
+    {{/each}}
+    {{#link-to "" class="button"}}
+        Contact Us
+    {{/link-to}}
+</ul>
