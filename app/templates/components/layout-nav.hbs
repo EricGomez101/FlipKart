@@ -1,20 +1,35 @@
-<nav class="navbar has-background-light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <div class="navbar-item">
-      <h1 class="title">ComiKart</h1>
-    </div>
+    <a class="navbar-item" href="http://127.0.01:4200/">
+      <h1>ComiKart</h1>
+    </a>
+
+    <a role="button" {{action "handleBurger"}} class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      {{#link-to "dashboard" class="navbar-item"}}
+        Home
+      {{/link-to}}
+      {{#link-to "cart" class="navbar-item"}}
+        Cart
+      {{/link-to}}
+    </div>
+
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          {{#link-to "dashboard" class="button"}}
-            Home
-          {{/link-to}}
-          {{#link-to "cart" class="button"}}
-            Cart
-          {{/link-to}}
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
         </div>
       </div>
     </div>
