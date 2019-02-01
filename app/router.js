@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('dashboard', { path: "/dashboard" });
   this.route('cart');
+  this.route('splash-page',  {path: '/'});
 });
 
 export default Router;
