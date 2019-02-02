@@ -1,30 +1,62 @@
-<div class="container">
-  <div class="section">
-    <h2 class="title">Your cart</h2>
-    <p>You have {{quantity-of-items this.model.items}} items in your cart.</p>
-  </div>
-  <div class="section">
-    <div class="box">
-      <div class="columns">
-        <div class="column">
-          <h3>Pivots Fashion Shoulder Bag</h3>
+<div class="section">
+  <h2 class="title">Your cart</h2>
+  <p>You have {{quantity-of-items this.model.items}} items in your cart.</p>
+</div>
+<div class="section is-medium">
+  {{#each this.model.items as |item|}}
+    <div class="level box">
+      <div class="level-item has-text-centered is-width-quarter">
+        <div class="image is-128x128">
+          <img src={{item.image}} alt="lel">
         </div>
-        <div class="column">
-          <div class="box level">
-            <div class="level-item">
-              <div class="control">
-                <input type="text" class="input">
-              </div>
-              <div class="control">
-                <button class="button">+</button>
-              </div>
-            </div>
+      </div>
+      <div class="level-item is-width-quarter is-aligned-left">
+        <div>
+          <h3 class="title is-size-3">{{item.title}}</h3>
+          <p>Product brand</p>
+          <p>product ID</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered is-width-quarter">
+        <div>
+          <div class="quantityComponent">
+            <span>-</span>
+            <input type="text" value={{item.quantity}} disabled>
+            <span {{action "incrementQuantity" item}}>+</span>
           </div>
         </div>
-        <div class="column">
-          <p>LEL</p>
+      </div>
+      <div class="level-item has-text-right is-width-quarter">
+        <div>
+          <h3 class="title is-size-4">${{item.price}}</h3>
+          <a class="is-block">Save for later</a>
+          <a class="is-block">Remove</a>
         </div>
       </div>
     </div>
-  </div>
+  {{/each}}
 </div>
+<section class="container has-padding-right-lg">
+  <div class="columns">
+    <div class="column is-offset-8">
+      <div class="level">
+        <div class="level-item">
+          <div>
+            <h3 class="title is-size-5 is-marginless">Order Sub-Total</h3>
+            <p>{{quantity-of-items this.model.items}} items</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered is-component-aligned-bottom">
+          <div>
+            <h3 class="title is-size-4 is-marginless">${{calculate-cost this.model.items}}</h3>
+          </div>
+        </div>
+      </div>
+      <button class="button is-fullwidth is-primary is-large">
+        Checkout
+      </button>
+    </div>
+  </div>
+</section>
+
+

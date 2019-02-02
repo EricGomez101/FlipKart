@@ -1,0 +1,53 @@
+.is-component-aligned-bottom {
+    align-self: flex-end;
+}
+
+.is-width-quarter {
+    width: 25%;
+}
+.is-aligned-left {
+    justify-content: flex-start;
+}
+.quantityComponent {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    border: 1px solid lightgray;
+    span {
+        text-align: center;
+        font-size: 2rem;
+        display: flex;
+        font-weight: bold;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        cursor: pointer;
+        background: #F1F1F1;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    span:hover {
+        background: #EBEBEB;
+    }
+    span:active {
+        background: #C6C6C6;
+    }
+    span:first-child {
+        border-right: 1px solid lightgray;
+    }
+    span:last-child {
+        border-left: 1px solid lightgray;
+    }
+    input {
+        width: 4rem;
+        padding: 0;
+        text-align: center;
+        border: 0;
+        border-radius: 0;
+        font-size: 1.6rem;
+        background: white;
+        color: gray;
+    }
+}
