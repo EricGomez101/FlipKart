@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="section">
+    controls
+  </div>
+  <div class="section">
+    <div class="level">
+      {{#each this.model.items as |item|}}
+        <ul class="product level-item">{{item.title}}</ul>
+      {{/each}}
+    </div>
+  </div>
+</div>

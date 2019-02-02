@@ -1,0 +1,27 @@
+---
+language: node_js
+node_js:
+  - "10.15.1"
+
+sudo: false
+dist: bionic beaver
+
+addons:
+  chrome: xenial
+
+cache:
+  directories:
+    - $HOME/.npm
+
+env:
+  global:
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
+
+before_install:
+  - npm config set spin false
+
+script:
+  - npm run lint:hbs
+  - npm run lint:js
+  - npm test
